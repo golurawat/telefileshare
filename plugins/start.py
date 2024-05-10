@@ -58,6 +58,7 @@ async def start_command(client: Client, message: Message):
         temp_msg = await message.reply("Please wait...llllllll")
         try:
             messages = await get_messages(client, ids)
+            await get_messages(client, ids)
             # await asyncio.sleep(8)
             # await messages.delete()
             # //ssssssss //.
