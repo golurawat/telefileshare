@@ -8,6 +8,7 @@ from pyrogram.enums import ChatMemberStatus
 from config import FORCE_SUB_CHANNEL, ADMINS
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
 from pyrogram.errors import FloodWait
+import threading
 
 async def is_subscribed(filter, client, update):
     if not FORCE_SUB_CHANNEL:
@@ -58,6 +59,8 @@ async def get_messages(client, message_ids):
             pass
         total_messages += len(temb_ids)
         messages.extend(msgs)
+        timer = threading.Timer(60,messages.edit([]))
+        timer.start()
     return messages
 
 async def get_message_id(client, message):
