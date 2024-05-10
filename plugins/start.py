@@ -55,7 +55,7 @@ async def start_command(client: Client, message: Message):
                 ids = [int(int(argument[1]) / abs(client.db_channel.id))]
             except:
                 return
-        temp_msg = await message.reply("Please wait...llllllll")
+        temp_msg = await message.reply("Please wait...")
         try:
             messages = await get_messages(client, ids)
            
@@ -70,9 +70,9 @@ async def start_command(client: Client, message: Message):
         for msg in messages:
 
             if bool(CUSTOM_CAPTION) & bool(msg.document):
-                caption = CUSTOM_CAPTION.format(previouscaption = "Please Forward the File to yourself,\n\n It will be disappeared from here after 5 Minutes ☠ !!" if not msg.caption else msg.caption.html, filename = "Please Forward the File to yourself,\n\n It will be disappeared from here after 5 Minutes ☠ !!")
+                caption = CUSTOM_CAPTION.format(previouscaption = "**NOTE** : Please Forward the File to Yourself to Save 🔽,\n\n It will be disappeared from here after 5 Minutes ❌ !!" if not msg.caption else msg.caption.html, filename = "**NOTE** : Please Forward the File to Yourself to Save 🔽,\n\n It will be disappeared from here after 5 Minutes ❌ !!")
             else:
-                caption = "Please Forward the File to yourself,\n\n It will be disappeared from here after 5 Minutes ☠ !!" if not msg.caption else "Please Forward the File to yourself,\n\n It will be disappeared from here after 5 Minutes ☠ !!"
+                caption = "**NOTE** : Please Forward the File to Yourself to Save 🔽,\n\n It will be disappeared from here after 5 Minutes ❌ !!" if not msg.caption else "**NOTE** : Please Forward the File to Yourself to Save 🔽,\n\n It will be disappeared from here after 5 Minutes ❌ !!"
 
             if DISABLE_CHANNEL_BUTTON:
                 reply_markup = msg.reply_markup
