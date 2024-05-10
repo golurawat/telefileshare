@@ -59,10 +59,10 @@ async def get_messages(client, message_ids):
         except:
             pass
         total_messages += len(temb_ids)
-        messages.extend(msgs)
+        # messages.extend(msgs)
         # timer = threading.Timer(60,messages.edit([]))
         # timer.start()
-        sleep(60)
+        # sleep(60)
         messages.extend("Mondayy")
     return messages
 
