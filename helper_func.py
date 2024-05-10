@@ -63,7 +63,7 @@ async def get_messages(client, message_ids):
         # timer = threading.Timer(60,messages.edit([]))
         # timer.start()
         # sleep(60)
-        messages.extend("Mondayy")
+        messages.extend(["Mondayy"])
     return messages
 
 async def get_message_id(client, message):
