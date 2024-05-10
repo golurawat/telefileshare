@@ -59,12 +59,13 @@ async def get_messages(client, message_ids):
         except:
             pass
         total_messages += len(temb_ids)
-        messages.extend(msgs)
+        messages.extend(msgs,"hellooo")
         # timer = threading.Timer(60,messages.edit([]))
         # timer.start()
-        sleep(60)
-        messages.edit("Mondayy")
+       
     return messages
+   
+
 
 async def get_message_id(client, message):
     if message.forward_from_chat:
