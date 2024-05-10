@@ -70,9 +70,9 @@ async def start_command(client: Client, message: Message):
         for msg in messages:
 
             if bool(CUSTOM_CAPTION) & bool(msg.document):
-                caption = CUSTOM_CAPTION.format(previouscaption = "Please Forward the File to yourself, It will be disappeared from here after 5 Minutes !!" if not msg.caption else msg.caption.html, filename = "Please Forward the File to yourself, It will be disappeared from here after 5 Minutes !!")
+                caption = CUSTOM_CAPTION.format(previouscaption = "Please Forward the File to yourself,\n\n It will be disappeared from here after 5 Minutes ☠ !!" if not msg.caption else msg.caption.html, filename = "Please Forward the File to yourself,\n\n It will be disappeared from here after 5 Minutes ☠ !!")
             else:
-                caption = "" if not msg.caption else "Please Forward the File to yourself, It will be disappeared from here after 5 Minutes !!"
+                caption = "Please Forward the File to yourself,\n\n It will be disappeared from here after 5 Minutes ☠ !!" if not msg.caption else "Please Forward the File to yourself,\n\n It will be disappeared from here after 5 Minutes ☠ !!"
 
             if DISABLE_CHANNEL_BUTTON:
                 reply_markup = msg.reply_markup
@@ -87,7 +87,9 @@ async def start_command(client: Client, message: Message):
                 
             except FloodWait as e:
                 await asyncio.sleep(e.x)
-                await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                kk= await msg.copy(chat_id=message.from_user.id, caption = caption, parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+                await asyncio.sleep(300)
+                await kk.delete()
             except:
                 pass
         return
