@@ -85,11 +85,11 @@ async def start_command(client: Client, message: Message):
                await tt.delete()
                
                 
-            except FloodWait as e:
-                await asyncio.sleep(e.x)
-                kk= await msg.copy(chat_id=message.from_user.id, caption = "NOTE : Please Forward the File to Yourself to Save 🔽,\n\n It will be disappeared from here after 5 Minutes ❌ !!", parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
-                await asyncio.sleep(300)
-                await kk.delete()
+            # except FloodWait as e:
+            #     await asyncio.sleep(e.x)
+            #     kk= await msg.copy(chat_id=message.from_user.id, caption = "NOTE : Please Forward the File to Yourself to Save 🔽,\n\n It will be disappeared from here after 5 Minutes ❌ !!", parse_mode = ParseMode.HTML, reply_markup = reply_markup, protect_content=PROTECT_CONTENT)
+            #     await asyncio.sleep(300)
+            #     await kk.delete()
             except:
                 pass
         return
