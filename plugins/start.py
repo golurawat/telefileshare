@@ -70,9 +70,9 @@ async def start_command(client: Client, message: Message):
         for msg in messages:
 
             if bool(CUSTOM_CAPTION) & bool(msg.document):
-                caption = CUSTOM_CAPTION.format(previouscaption = "**NOTE** : Please Forward the File to Yourself to Save 🔽,\n\n It will be disappeared from here after 5 Minutes ❌ !!" if not msg.caption else msg.caption.html, filename = "**NOTE** : Please Forward the File to Yourself to Save 🔽,\n\n It will be disappeared from here after 5 Minutes ❌ !!")
+                caption = CUSTOM_CAPTION.format(previouscaption = "*NOTE* : Please Forward the File to Yourself to Save the Video. 🔽,\n\n It will be disappeared from here after 20 Seconds  ❌ !!" if not msg.caption else msg.caption.html, filename = "*NOTE* : Please Forward the File to Yourself to Save the Video. 🔽,\n\n It will be disappeared from here after 20 Seconds  ❌ !!")
             else:
-                caption = "**NOTE** : Please Forward the File to Yourself to Save 🔽,\n\n It will be disappeared from here after 5 Minutes ❌ !!" if not msg.caption else "**NOTE** : Please Forward the File to Yourself to Save 🔽,\n\n It will be disappeared from here after 5 Minutes ❌ !!"
+                caption = "*NOTE* : Please Forward the File to Yourself to Save the Video. 🔽,\n\n It will be disappeared from here after 20 Seconds  ❌ !!" if not msg.caption else "*NOTE* : Please Forward the File to Yourself to Save the Video. 🔽,\n\n It will be disappeared from here after 20 Seconds  ❌ !!"
 
             if DISABLE_CHANNEL_BUTTON:
                 reply_markup = msg.reply_markup
